@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        画像編集ツール
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/material.min.css' />
+</head>
+
+<body>
+    <section>
+        <h1>画像編集ツール</h1>
+
+        <form>
+            <input type="file">
+        </form>
+
+        編集する画像を選択してください
+
+        <hr>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="editMode0">
+    <input type="radio" id="editMode0" name="editMode" value="0" class="mdl-radio__button">
+    <span class="mdl-radio__label">Text Edit</span>
+  </label> /
+
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="editMode1">
+    <input type="radio" id="editMode1" name="editMode" value="1" class="mdl-radio__button" checked="true">
+    <span class="mdl-radio__label">Paint</span>
+  </label>
+        <hr>
+        <div class="canvas-box">
+            <canvas id="image_canvas" width="800" height="500"></canvas>
+            <canvas id="text_canvas" width="800" height="500" style="z-index: 1;"></canvas>
+        </div>
+        <hr>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" id="theText" type="text">
+          <label class="mdl-textfield__label" for="theText">input text</label>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="submit">input text</button>
+        <hr> size：
+        <span id="size-display">7</span><input id="paintSize" class="mdl-slider mdl-js-slider" type="range" max="30" min="1" value="5" oninput="changeSize(this.value);" onchange="changeSize(this.value);alue;"> alpha：
+        <span id="alpha-display">100%</span><input id="paintAlpha" class="mdl-slider mdl-js-slider" type="range" max="100" min="1" value="100" oninput="changeAlpha(this.value);" onchange="changeAlpha(this.value);"> color：
+        <span id="paintColorBox"></span>
+        <% include colorpicker %>
+
+
+            <!--隠しメニュー-->
+            <div class="hide-rmenu" id="rmenu">
+                <ul>
+                    <li>
+                        <a href="#" onclick="return false;">文字を変更する</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="deleteText();return false;">文字を削除する</a>
+                    </li>
+                </ul>
+            </div>
+            <script src="/javascripts/jquery-3.2.0.min.js"></script>
+            <script src="/javascripts/edit.js"></script>
+            <script src="/javascripts/w3color.js"></script>
+            <script src="/javascripts/colorpicker.js"></script>
+            <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+            <section>
+</body>
+
+</html>

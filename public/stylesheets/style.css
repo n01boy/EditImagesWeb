@@ -1,0 +1,53 @@
+body {
+    width: auto;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #673ab7;
+}
+
+section {
+    padding: 0 20px;
+    background-color: #FFF;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.canvas-box {
+    position: relative;
+    border: 1px solid #159;
+    width: 800px;
+    height: 500px;
+}
+
+canvas {
+    position: absolute;
+}
+
+.hide-rmenu {
+    display: none;
+}
+
+.show-rmenu {
+    z-index: 1000;
+    position: absolute;
+    background-color: #ffecec;
+    border: 1px solid #ad0000;
+    padding: 2px;
+    display: block;
+    margin: 0;
+    width: 170px;
+}
+
+.show-rmenu a {
+    color: #ad0000;
+}
+
+#paintColorBox {
+    color: #580e7c;
+}
+
+#paintColorBox::after {
+    font-size: 38px;
+    content: '■'
+}
